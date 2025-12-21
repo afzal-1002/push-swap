@@ -4,34 +4,14 @@ char	**ft_split(char const *s)
 {
 	char	**result;
 	char	*str;
-	int		count;
-	int		i;
 	int		words;
-	int		start;
-	int		finish;
 
 	str = (char *)s;
-	count = 0;
-	i = 0;
 	words = word_count(str);
 	result = (char **)malloc(sizeof(char *) * (words + 1));
 	if (!result)
 		return (NULL);
-	i = 0;
-	while (str[i])
-	{
-		while (str[i] && ft_is_space(str[i]))
-			i++;
-		start = i;
-		if (str[i] && ft_is_char(str[i]))
-		{
-			while (str[i] && ft_is_char(str[i]))
-				i++;
-			finish = i;
-			result[count++] = word_dup(str, start, finish);
-		}
-	}
-	result[count] = NULL;
+	result = fill_words(str, result);
 	return (result);
 }
 

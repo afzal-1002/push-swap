@@ -12,6 +12,7 @@ SRC = \
 	srcs/libft/ft_is_char.c \
 	srcs/libft/ft_is_space.c \
 	srcs/libft/ft_split.c \
+	srcs/libft/ft_fill_words.c \
 	srcs/list/list_create.c \
 	srcs/list/list_free.c \
 	srcs/list/list_append.c\
@@ -28,10 +29,7 @@ SRC = \
 	srcs/utils/error.c \
 	srcs/utils/max_bits.c 
 
-
-
 OBJ = $(SRC:.c=.o)
-
 
 all: $(NAME)
 

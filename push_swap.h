@@ -26,6 +26,7 @@ int					ft_is_space(char c);
 char				**ft_split(char const *s);
 int					word_count(char *str);
 char				*word_dup(char *str, int start, int finish);
+char				**fill_words(char *str, char **result);
 void				free_split(char **split);
 
 /*All Algorithm*/

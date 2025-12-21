@@ -1,9 +1,12 @@
 #include "../../push_swap.h"
 
-void	print_error(void)
+void	reset_index(t_list *stack)
 {
-	write(1, "Error\n", 6);
-	exit(1);
+	while (stack)
+	{
+		stack->index = -1;
+		stack = stack->next;
+	}
 }
 
 void	assign_index(t_list *a, int *arr, int size)
@@ -25,5 +28,3 @@ void	assign_index(t_list *a, int *arr, int size)
 		a = a->next;
 	}
 }
-
-

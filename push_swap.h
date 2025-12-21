@@ -13,6 +13,21 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+/* array utilities */
+void				ft_swap(int *a, int *b);
+int					is_sorted(int *arr, int size);
+void				bubble_sort(int *arr, int size);
+void				quick_sort(int arr[], int start, int end);
+
+/*libft_util*/
+int					ft_atoi(const char *str);
+int					ft_is_char(char c);
+int					ft_is_space(char c);
+char				**ft_split(char const *s);
+int					word_count(char *str);
+char				*word_dup(char *str, int start, int finish);
+void				free_split(char **split);
+
 /*All Algorithm*/
 /* swap */
 void				sa(t_list **a);
@@ -33,6 +48,12 @@ void				rra(t_list **a);
 void				rrb(t_list **b);
 void				rrr(t_list **a, t_list **b);
 
+/* sorting algorithms */
+void				sort_three(t_list **stack);
+void				sort_five(t_list **stack_a, t_list **stack_b);
+void				radix_sort(t_list **stack_a, t_list **stack_b, int size,
+						int max_bits);
+
 /* linked list functions */
 t_list				*create_node(int value);
 t_list				*append_node(t_list **head, int value);
@@ -48,23 +69,6 @@ int					is_space(char c);
 int					is_char(char c);
 int					ft_atoi(const char *str);
 int					get_max_bits(int max_index);
-/* string split */
-char				**ft_split(char const *s);
-int					word_count(char *str);
-char				*word_dup(char *str, int start, int finish);
-void				free_split(char **split);
-
-/* sorting algorithms */
-void				sort_three(t_list **stack);
-void				sort_five(t_list **stack_a, t_list **stack_b);
-void				radix_sort(t_list **stack_a, t_list **stack_b, int size,
-						int max_bits);
-
-/* array utilities */
-void				swap(int *a, int *b);
-void				quick_sort(int arr[], int start, int end);
-void				bubble_sort(int *arr, int size);
-int					is_sorted(int *arr, int size);
 
 /* index assignment */
 void				print_error(void);

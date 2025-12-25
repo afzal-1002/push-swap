@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   list_index.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mafzal < mafzal@student.42warsaw.pl>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/25 20:52:13 by mafzal            #+#    #+#             */
+/*   Updated: 2025/12/25 20:54:28 by mafzal           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../push_swap.h"
 
 void	reset_index(t_list *stack)
@@ -8,6 +20,7 @@ void	reset_index(t_list *stack)
 		stack = stack->next;
 	}
 }
+
 void	assign_index(t_list *a, int *sorted, int size)
 {
 	int		i;

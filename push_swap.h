@@ -17,7 +17,7 @@ typedef struct s_list
 void				ft_swap(int *a, int *b);
 int					is_sorted(int *arr, int size);
 void				bubble_sort(int *arr, int size);
-void				quick_sort(int arr[], int start, int end);
+void				quick_sort(int arr[], int size, int end);
 
 /*libft_util*/
 int					ft_atoi(const char *str);
@@ -50,10 +50,12 @@ void				rrb(t_list **b);
 void				rrr(t_list **a, t_list **b);
 
 /* sorting algorithms */
+int					*prepare_stack(char **split, t_list **a, int size);
 void				sort_three(t_list **stack);
 void				sort_five(t_list **stack_a, t_list **stack_b);
-void				radix_sort(t_list **stack_a, t_list **stack_b, int size,
-						int max_bits);
+void				sort_all(t_list **a, t_list **b, int size, int max_bits);
+void				radix_sort(t_list **a, t_list **b, int size);
+int					get_min_pos(t_list *stack);
 
 /* linked list functions */
 t_list				*create_node(int value);
@@ -61,15 +63,21 @@ t_list				*append_node(t_list **head, int value);
 t_list				*get_last_node(t_list *head);
 t_list				*get_node_by_index(t_list *head, int index);
 t_list				*find_node_by_value(t_list *head, int value);
+int					list_size(char **split);
+
+void				list_fill(char **split, t_list **a, int numbers[],
+						int size);
 void				reset_index(t_list *stack);
 void				free_node(t_list *node);
 void				free_stack(t_list *head);
+int					has_duplicate(int *arr, int size);
 
 /* utility functions */
-int					is_space(char c);
-int					is_char(char c);
+int					ft_is_space(char c);
+int					ft_is_char(char c);
 int					ft_atoi(const char *str);
 int					get_max_bits(int max_index);
+int					stack_size(t_list *stack);
 
 /* index assignment */
 void				print_error(void);

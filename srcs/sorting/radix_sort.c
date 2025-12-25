@@ -1,24 +1,23 @@
 #include "../../push_swap.h"
 
-void	radix_sort(t_list **a, t_list **b, int size, int max_bits)
+void	radix_sort(t_list **a, t_list **b, int size)
 {
-	int	i;
-	int	j;
+	int	max_bits;
 
-	i = 0;
-	while (i < max_bits)
+	if (size <= 1)
+		return ;
+	else if (size == 2)
 	{
-		j = 0;
-		while (j < size)
-		{
-			if ((((*a)->index >> i) & 1) == 1)
-				ra(a);
-			else
-				pb(a, b);
-			j++;
-		}
-		while (*b)
-			pa(a, b);
-		i++;
+		if ((*a)->index > (*a)->next->index)
+			sa(a);
+	}
+	else if (size == 3)
+		sort_three(a);
+	else if (size <= 5)
+		sort_five(a, b);
+	else
+	{
+		max_bits = get_max_bits(size - 1);
+		sort_all(a, b, size, max_bits);
 	}
 }

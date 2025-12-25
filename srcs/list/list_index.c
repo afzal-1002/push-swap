@@ -8,23 +8,23 @@ void	reset_index(t_list *stack)
 		stack = stack->next;
 	}
 }
-
-void	assign_index(t_list *a, int *arr, int size)
+void	assign_index(t_list *a, int *sorted, int size)
 {
-	int	i;
+	int		i;
+	t_list	*cur;
 
-	while (a)
+	cur = a;
+	while (cur)
 	{
 		i = 0;
-		while (i < size)
-		{
-			if (arr[i] == a->value)
-			{
-				a->index = i;
-				break ;
-			}
+		while (i < size && sorted[i] != cur->value)
 			i++;
+		if (i == size)
+		{
+			write(2, "Error\n", 6);
+			exit(1);
 		}
-		a = a->next;
+		cur->index = i;
+		cur = cur->next;
 	}
 }

@@ -12,6 +12,7 @@ char	**ft_split(char const *s)
 	if (!result)
 		return (NULL);
 	result = fill_words(str, result);
+	result[words] = NULL;
 	return (result);
 }
 

@@ -11,6 +11,7 @@ SRC = \
 	srcs/libft/ft_atoi.c \
 	srcs/libft/ft_is_char.c \
 	srcs/libft/ft_is_space.c \
+	srcs/libft/ft_free_split.c \
 	srcs/libft/ft_split.c \
 	srcs/libft/ft_fill_words.c \
 	srcs/list/list_create.c \
@@ -29,6 +30,7 @@ SRC = \
 	srcs/sorting/sort_three.c \
 	srcs/sorting/sort_five.c \
 	srcs/sorting/sort_all.c \
+	srcs/sorting/is_sorted_stack.c \
 	srcs/sorting/radix_sort.c \
 	srcs/utils/error.c \
 	srcs/utils/max_bits.c \

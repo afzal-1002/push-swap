@@ -6,7 +6,7 @@
 /*   By: mafzal < mafzal@student.42warsaw.pl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 20:50:37 by mafzal            #+#    #+#             */
-/*   Updated: 2025/12/27 15:12:00 by mafzal           ###   ########.fr       */
+/*   Updated: 2025/12/27 18:03:29 by mafzal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	main(int argc, char **argv)
 	swap.a = NULL;
 	swap.b = NULL;
 	swap.numbers = NULL;
-	if (argc < 2)
-		return (0);
+	if (argc == 1 || (argc == 2 && !argv[1][0]))
+		return (1);
 	if (argc == 2)
 		swap.split = ft_split(argv[1]);
 	else

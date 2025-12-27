@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_all.c                                         :+:      :+:    :+:   */
+/*   ft_is_num.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mafzal < mafzal@student.42warsaw.pl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/25 20:51:09 by mafzal            #+#    #+#             */
-/*   Updated: 2025/12/27 16:28:24 by mafzal           ###   ########.fr       */
+/*   Created: 2025/12/27 17:47:32 by mafzal            #+#    #+#             */
+/*   Updated: 2025/12/27 17:47:59 by mafzal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	sort_all(t_list **a, t_list **b, int size, int max_bits)
+int	is_valid_number(char *str)
 {
 	int	i;
-	int	j;
-	int	pushed;
 
 	i = 0;
-	while (i < max_bits)
+	if (!str || !str[0])
+		return (0);
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	if (!str[i])
+		return (0);
+	while (str[i])
 	{
-		j = 0;
-		pushed = 0;
-		while (j < size)
-		{
-			if ((((*a)->index >> i) & 1) == 1)
-				ra(a);
-			else
-			{
-				pb(a, b);
-				pushed++;
-			}
-			j++;
-		}
-		while (pushed--)
-			pa(a, b);
+		if (!ft_isdigit(str[i]))
+			return (0);
 		i++;
 	}
+	return (1);
 }

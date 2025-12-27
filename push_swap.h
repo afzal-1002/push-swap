@@ -6,13 +6,14 @@
 /*   By: mafzal < mafzal@student.42warsaw.pl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 20:56:40 by mafzal            #+#    #+#             */
-/*   Updated: 2025/12/27 15:11:40 by mafzal           ###   ########.fr       */
+/*   Updated: 2025/12/27 18:03:47 by mafzal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -47,7 +48,7 @@ char				**ft_split(char const *s);
 int					word_count(char *str);
 char				*word_dup(char *str, int start, int finish);
 char				**fill_words(char *str, char **result);
-
+long				parse_number(const char *str, int sign, int i);
 /* swap */
 void				sa(t_list **a);
 void				sb(t_list **b);
@@ -74,6 +75,7 @@ void				sort_five(t_list **stack_a, t_list **stack_b);
 void				sort_all(t_list **a, t_list **b, int size, int max_bits);
 void				radix_sort(t_list **a, t_list **b, int size);
 int					get_min_pos(t_list *stack);
+int					is_sorted_stack(t_list *a);
 
 /* linked list functions */
 t_list				*create_node(int value);

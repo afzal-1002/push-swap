@@ -31,7 +31,8 @@ SRC = \
 	srcs/sorting/sort_all.c \
 	srcs/sorting/radix_sort.c \
 	srcs/utils/error.c \
-	srcs/utils/max_bits.c 
+	srcs/utils/max_bits.c \
+	srcs/utils/free_all.c 
 
 OBJ = $(SRC:.c=.o)
 

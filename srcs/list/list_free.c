@@ -6,21 +6,23 @@
 /*   By: mafzal < mafzal@student.42warsaw.pl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 20:52:10 by mafzal            #+#    #+#             */
-/*   Updated: 2025/12/25 20:52:11 by mafzal           ###   ########.fr       */
+/*   Updated: 2025/12/27 14:02:15 by mafzal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	free_stack(t_list *head)
+void	free_stack(t_list **stack)
 {
 	t_list	*tmp;
 
-	while (head)
+	if (!stack || !*stack)
+		return ;
+	while (*stack)
 	{
-		tmp = head->next;
-		free_node(head);
-		head = tmp;
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
 	}
 }
 

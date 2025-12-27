@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_duplicate.c                                     :+:      :+:    :+:   */
+/*   free_all.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mafzal < mafzal@student.42warsaw.pl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/25 20:52:53 by mafzal            #+#    #+#             */
-/*   Updated: 2025/12/25 22:21:32 by mafzal           ###   ########.fr       */
+/*   Created: 2025/12/27 13:49:26 by mafzal            #+#    #+#             */
+/*   Updated: 2025/12/27 15:13:54 by mafzal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int	has_duplicate(int *arr, int size)
+void	mem_clear(t_push_swap *swap, int argc)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < size)
+	if (swap->numbers)
 	{
-		j = i + 1;
-		while (j < size)
-		{
-			if (arr[i] == arr[j])
-			{
-				write(2, "Error\n", 6);
-				return (1);
-			}
-			j++;
-		}
-		i++;
+		free(swap->numbers);
+		swap->numbers = NULL;
 	}
-	return (0);
+	if (swap->a)
+		free_stack(&swap->a);
+	if (swap->b)
+		free_stack(&swap->b);
+	if (argc == 2 && swap->split)
+		free_split(swap->split);
 }

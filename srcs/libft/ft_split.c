@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mafzal < mafzal@student.42warsaw.pl>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/27 18:20:05 by mafzal            #+#    #+#             */
+/*   Updated: 2025/12/27 18:20:21 by mafzal           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../push_swap.h"
 
 char	**ft_split(char const *s)
@@ -27,7 +39,6 @@ char	**ft_split(char const *s)
 	result[j] = NULL;
 	return (result);
 }
-
 
 int	word_count(char *str)
 {
@@ -62,4 +73,3 @@ char	*word_dup(char *str, int start, int end)
 	word[i] = '\0';
 	return (word);
 }
-
